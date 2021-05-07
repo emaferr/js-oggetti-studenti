@@ -86,4 +86,57 @@ while ( i < classe.length) {
         `)
 
     i++
+} ;
+
+// console.log(classe);
+
+// Defivisco una variabile collegata al button html
+
+var creaStudente = document.getElementById("aggiungi_studente");
+
+/* Assegno al click di tale button una funzione anonima che successivamente ai prompt dell'utente 
+   aggiunge un nuovu studente all'array classe
+*/
+
+creaStudente.addEventListener("click" , function () {
+
+    var nomeNuovoStudente = prompt("Inserisci il nome del nuovo studente");
+    var cognomeNuovoStudente = prompt("Inserisci il cognome del nuovo studente");
+    var etaNuovoStudente = prompt("Inserisci l'età del nuovo studente")
+
+
+    var nuovoStudente = {
+
+    nomeStudente :  nomeNuovoStudente,
+    cognomeStudente : cognomeNuovoStudente ,
+    età : etaNuovoStudente + " anni"
 }
+
+classe.push(nuovoStudente);
+
+    /* Dopo aver aggiunto il nuovo oggetto (studente) all'array stampo 
+        nome e cognome in seguito a quelli gia presenti
+    */
+
+        sectionEl.insertAdjacentHTML( 'beforeend' , 
+
+        `
+        <li class="list-group-item d-flex w-100 justify-content-between">
+
+            <span class="text-uppercase text-monospace font-weight-bold"> Studente </span>
+            <span class="text-monospace text-capitalize"> ${ nomeNuovoStudente } </span>
+            <span class="text-monospace text-capitalize"> ${ cognomeNuovoStudente } </span>
+    
+        </li>
+
+        `)
+
+        // console.log(classe);
+
+}) ;
+
+
+
+
+
+
