@@ -80,7 +80,25 @@ while ( i < classe.length) {
             <span class="text-uppercase text-monospace font-weight-bold"> Studente </span>
             <span class="text-monospace"> ${ studenteClasse.nomeStudente } </span>
             <span class="text-monospace"> ${ studenteClasse.cognomeStudente } </span>
-    
+            <div class="btn-group dropright">
+                <button type="button" class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    visualizza
+                </button>
+                <div class="dropdown-menu ml-5 px-3 scheda_studente">
+                    <ul class="list-group">
+                        <li class="list-group">
+                            <strong class="text-monospace">NOME</strong> <span class="text-monospace">${ studenteClasse.nomeStudente } </span>
+                        </li>
+                        <li class="list-group">
+                            <strong class="text-monospace mt-2">COGNOME</strong><span class="text-monospace">${ studenteClasse.cognomeStudente } </span>
+                        </li>
+                        <li class="list-group">
+                            <strong class="text-monospace mt-2">ETA'</strong><span class="text-monospace">${ studenteClasse.età } </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </li>
 
         `)
@@ -110,9 +128,10 @@ creaStudente.addEventListener("click" , function () {
     nomeStudente :  nomeNuovoStudente,
     cognomeStudente : cognomeNuovoStudente ,
     età : etaNuovoStudente + " anni"
-}
 
-classe.push(nuovoStudente);
+    }
+
+    classe.push(nuovoStudente);
 
     /* Dopo aver aggiunto il nuovo oggetto (studente) all'array stampo 
         nome e cognome in seguito a quelli gia presenti
@@ -126,14 +145,33 @@ classe.push(nuovoStudente);
             <span class="text-uppercase text-monospace font-weight-bold"> Studente </span>
             <span class="text-monospace text-capitalize"> ${ nomeNuovoStudente } </span>
             <span class="text-monospace text-capitalize"> ${ cognomeNuovoStudente } </span>
+            <div class="btn-group dropright">
+                <button type="button" class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    visualizza
+                </button>
+                <div class="dropdown-menu ml-5 px-3 scheda_studente">
+                    <ul class="list-group">
+                        <li class="list-group">
+                            <strong class="text-monospace">NOME</strong> <span class="text-monospace text-capitalize">${ nomeNuovoStudente } </span>
+                        </li>
+                        <li class="list-group">
+                            <strong class="text-monospace mt-2">COGNOME</strong><span class="text-monospace text-capitalize">${ cognomeNuovoStudente } </span>
+                        </li>
+                        <li class="list-group">
+                            <strong class="text-monospace mt-2">ETA'</strong><span class="text-monospace">${ etaNuovoStudente + " anni" } </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
     
         </li>
 
         `)
 
-        // console.log(classe);
-
 }) ;
+
+
+
 
 
 
